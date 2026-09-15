@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Photo Management | Parshotam Building Planner & Designer</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- Login Screen -->
+    <section id="login-screen" class="login-screen">
+        <form id="login-form" class="login-card">
+            <h1>Admin Login</h1>
+            <p class="subtitle">Parshotam Building Planner & Designer</p>
+            <label>
+                Username
+                <input type="text" id="login-username" autocomplete="username" required>
+            </label>
+            <label>
+                Password
+                <input type="password" id="login-password" autocomplete="current-password" required>
+            </label>
+            <p id="login-error" class="error-text" hidden></p>
+            <button type="submit" class="btn-primary">Log In</button>
+        </form>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard-screen" class="dashboard-screen" hidden>
+        <header class="dashboard-header">
+            <h1>Portfolio Photo Manager</h1>
+            <button id="logout-btn" class="btn-secondary">Log Out</button>
+        </header>
+
+        <main class="dashboard-main">
+            <form id="photo-form" class="photo-form">
+                <h2 id="form-title">Add New Photo</h2>
+                <input type="hidden" id="photo-id">
+
+                <label>
+                    Project Title
+                    <input type="text" id="photo-title" placeholder="e.g. The Horizon Villa" required>
+                </label>
+                <label>
+                    Category
+                    <input type="text" id="photo-category" placeholder="e.g. Residential Architecture" required>
+                </label>
+                <label>
+                    Location
+                    <input type="text" id="photo-location" placeholder="e.g. Samba, J&K" required>
+                </label>
+                <label>
+                    Photo <span id="image-required-hint">(required)</span>
+                    <input type="file" id="photo-image" accept="image/jpeg,image/png,image/webp">
+                </label>
+
+                <p id="form-error" class="error-text" hidden></p>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary" id="form-submit-btn">Add Photo</button>
+                    <button type="button" class="btn-secondary" id="form-cancel-btn" hidden>Cancel Edit</button>
+                </div>
+            </form>
+
+            <div class="photo-list-wrap">
+                <h2>Existing Photos</h2>
+                <div id="photo-list" class="photo-list"></div>
+                <p id="empty-state" class="empty-state" hidden>No photos yet. Add your first project above.</p>
+            </div>
+        </main>
+    </section>
+
+    <script src="admin.js"></script>
+</body>
+</html>
